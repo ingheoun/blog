@@ -34,6 +34,17 @@
         <ul class="nav navbar-nav">
           <li><a href="/blog/index">blog</a></li>
           <li><a href="/blog/new">write</a></li>
+          <% if user_signed_in? %>
+            <li> 
+              <a href = "#"><%= current_user.email %></a>
+            </li>
+            <li>
+              <%= link_to 'logout', '/users/sign_out', method: 'delete' %>
+            </li>
+            <li><a href="#"><%= current_user.role %></a></li>
+          <% else %>
+            <li><a href = "/users/sign_in">login</a></li>
+          <% end %>
           <li><a href="#">Visitor</a></li>
           <li><a href="#">Link</a></li>
         </ul>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root "blog#index"
   get "blog/index"
   get "blog/show/:id", to: 'blog#show'

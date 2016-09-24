@@ -1,4 +1,12 @@
 class BlogController < ApplicationController
+	
+	before_action :authenticate_user!, only: [:new, :edit, :update, :creation, :destroy]
+	before_action :check_admin, except: [:show, :index]
+	
+	def check_admin
+		redirect_to '/blog/index/' if !user_signed_in? || current_user.role != 'admin'
+	end
+	
 	def index
 		@msg = "Hello World!"
 		@posts = Article.all
