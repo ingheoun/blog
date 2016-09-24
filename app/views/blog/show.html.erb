@@ -1,0 +1,38 @@
+<div class="row blog-wrapper">
+  <div class="col-sm-8">
+    <div class="blog-post">
+      <h2 class="blog-post-title"><%= @post.title %></h2>
+      <ul class="list-inline blog-post-meta">
+        <li><%= @post.created_at %></li>
+        <li><a href="/blog/edit/<%= @post.id%>">수정</a></li>
+        <li><a rel="nofollow" data-method="post" href="/blog/destroy/<%= @post.id%>">삭제</a></li>
+        <!--<li><%= link_to '삭제','/blog/destroy/'+@post.id.to_s ,method:"post"%></li>-->
+      </ul>
+      <p class = 'blog-content'>
+        <%= @post.content %>
+      </p>
+      </div>
+    </div><!-- /.blog-post -->
+    <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+    <div class="sidebar-module sidebar-module-inset">
+      <h4>About</h4>
+      <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+    </div>
+    <div class="sidebar-module">
+      <h4>SNS</h4>
+      <ol class="list-unstyled">
+        <!--<li><a href="#">GitHub</a></li>-->
+        <li><a href="https://twitter.com/ingh_redsquare">Twitter</a></li>
+        <li><a href="https://fb.com/ingheoun">Facebook</a></li>
+      </ol>
+    </div>
+  </div><!-- /.blog-sidebar -->
+    <nav>
+      <ul class="pager">
+      </ul>
+    </nav>
+
+  </div><!-- /.blog-main -->
+  
+  
+</div><!-- /.row -->
