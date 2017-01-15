@@ -27,7 +27,6 @@ Starting at 2015.09.24. w/ ['like a lion @KAIST'](www.facebook.com/likelion.kais
 - Change article time view for korea
 
 
-
 ## To Do
 
 - Show articles create times but also update times
@@ -36,3 +35,6 @@ Starting at 2015.09.24. w/ ['like a lion @KAIST'](www.facebook.com/likelion.kais
 - Hits and 'like' for articles
 - Portfolio archive for me
 - Visitors for guest
+- Launching
+
+
