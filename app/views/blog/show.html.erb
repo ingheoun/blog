@@ -1,9 +1,9 @@
 <div class="row blog-wrapper">
-  <div class="col-sm-8">
+  <div class="col-md-8">
     <div class="blog-post">
       <h2 class="blog-post-title"><%= @post.title %></h2>
       <ul class="list-inline blog-post-meta">
-        <li><%= @post.created_at %></li>
+        <li><%= @post.created_at.in_time_zone('Seoul').strftime("%Y-%m-%d %H:%M") %></li>
         <li><a href="/blog/edit/<%= @post.id%>">수정</a></li>
         <li><a rel="nofollow" data-method="post" href="/blog/destroy/<%= @post.id%>">삭제</a></li>
         <!--<li><%= link_to '삭제','/blog/destroy/'+@post.id.to_s ,method:"post"%></li>-->
@@ -13,35 +13,9 @@
       </p>
       </div>
     </div><!-- /.blog-post -->
-    <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-    <div class="sidebar-module sidebar-module-inset">
-      <h4>About</h4>
-      <p>Schl. of Electrical Engineering, <em>KAIST</em>
-        </br>
-        IVYLAB M.S. candidate <em>15'</em>
-        </br>
-        Undergraduate <em>10'</em>
-        </p>
-        <p>
-        (전) 제 43대 대학원총학생회 비상대책위원회 문화사업부장
-        </br>
-        (전) KAIST 라이프스타일연구소 연구원
-        </br>
-        (전) KAIST 학생문화공간위원회 기획 2팀 팀장
-        </br>
-        (전) KAIST 학생문화공간위원회 관리 1팀
-        </p>
-        <p> Mail : ingheoun@kaist.ac.kr</p>
-      </div>
-    <div class="sidebar-module">
-      <h4>SNS</h4>
-      <ol class="list-unstyled">
-        <!--<li><a href="#">GitHub</a></li>-->
-        <li><a href="https://twitter.com/ingh_redsquare">Twitter</a></li>
-        <li><a href="https://fb.com/ingheoun">Facebook</a></li>
-      </ol>
-    </div>
-  </div><!-- /.blog-sidebar -->
+    
+  <%= render "shared/sidebar" %><!-- /.blog-sidebar -->
+  
     <nav>
       <ul class="pager">
       </ul>

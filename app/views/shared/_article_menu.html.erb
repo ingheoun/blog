@@ -1,0 +1,14 @@
+<div class="col-sm-2 col-sm-offset-0 blog-sidebar">
+    <div class="sidebar-module sidebar-module-inset">
+      <h4>Cartegory</h4>
+      
+      <ul style="padding-left: 30px;">
+    	  <li> <a href="/blog/index/all"> all (<%= @all_article.count %>) </li>
+      	<ul style="padding-left: 20px;">
+        	<% @ctgrs.each do |cat| %>
+        		<li> <a href="/blog/index/<%= cat.name%>"> <%= cat.name %> (<%= cat.num %>)</li>
+      		<% end %>
+    		</ul>
+      </ul>
+    </div>  
+  </div><!-- /.blog-sidebar -->

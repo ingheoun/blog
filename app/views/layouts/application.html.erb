@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My BLOG</title>
+  <title>Blogg-Ingheoun</title>
+
+
+  <!-- Latest compiled and minified CSS --> 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   
+  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+  
+  
+  <!-- include summernote css/js-->
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+
+
+
 
   <%= stylesheet_link_tag    'application' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
   
 </head>
 <body>
@@ -26,7 +45,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Brand</a>
+        <a class="navbar-brand">Ingheoun</a>
       </div>
   
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -34,31 +53,43 @@
         <ul class="nav navbar-nav">
           <li><a href="/blog/index">blog</a></li>
           <li><a href="/blog/new">write</a></li>
-          <% if user_signed_in? %>
-            <li> 
-              <a href = "#"><%= current_user.email %></a>
-            </li>
-            <li>
-              <%= link_to 'logout', '/users/sign_out', method: 'delete' %>
-            </li>
-            <li><a href="#"><%= current_user.role %></a></li>
-          <% else %>
-            <li><a href = "/users/sign_in">login</a></li>
-          <% end %>
           <li><a href="#">Visitor</a></li>
           <li><a href="#">Link</a></li>
         </ul>
+        
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li class="dropdown" >
+              <a class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %> <b class="caret"></b></a>
+              <ul class="dropdown-menu" 
+              style="border-radius: 4px;
+              background-image: linear-gradient(to bottom,#fff 20%,#f8f8f8 100%);
+              box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 5px rgba(0,0,0,.075);">
+                <li><a><%= current_user.role %></a></li>
+                <li><%= link_to "My Profile", edit_user_registration_path %></li>
+                <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+          <% end %>
+        </ul>
+        
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
   <div class = 'container'>
+    <%= render partial: "shared/flash_messages", flash: flash %>
     <%= yield %>
   </div>
+  
   <footer class="blog-footer">
     <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
     <p>
       <a href="#">Back to top</a>
     </p>
   </footer>
+
 </body>
 </html>

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root "blog#index"
   get "blog/index"
+  get "blog/index/:cat", to: 'blog#index'
   get "blog/show/:id", to: 'blog#show'
   get "blog/new"
   post "blog/create"

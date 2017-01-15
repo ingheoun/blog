@@ -1,24 +1,38 @@
+##Intro 
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+Web programing for my blog
+
+Language: Ruby on Rails  
+
+Using:  Cloud 9, Heroku, CloudFlare
+
+Import: Bootstrap, device
+
+Starting at 2015.09.24. w/ ['like a lion @KAIST'](www.facebook.com/likelion.kaist)
+
+##Update
+
+#### ~2017.01.16
+
+- Article CRUD
+  - index
+  - new -> create 
+  - show #
+  - edit -> update # 
+  - destroy #
+- Import bootstrap and theme
+- Customizing theme and update articles
+- Import device
+- Make category and menu for articles
+- Change article time view for korea
 
 
-Welcome to your Rails project on Cloud9 IDE!
 
-To get started, just do the following:
+## To Do
 
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://ingh-blog-ingheoun.c9users.io/).
-
-Happy coding!
-The Cloud9 IDE team
-
-
-## Support & Documentation
-
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+- Show articles create times but also update times
+- Nickname for account
+- Reply for articles
+- Hits and 'like' for articles
+- Portfolio archive for me
+- Visitors for guest

@@ -9,15 +9,28 @@ class BlogController < ApplicationController
 	
 	def index
 		@msg = "Hello World!"
-		@posts = Article.all
-	end
-	def new
+		@ctgrs = Category.all
+		@all_article = Article.all
 		
+		
+		if params[:cat].blank? or params[:cat] == "all"
+			@posts = Article.all
+		else
+			@cat_id = Category.where("name = ?", params[:cat]).first.id
+			@posts = Article.where("category_id = ?", @cat_id)
+		end
+	end
+	
+	def new
+		@ctgrs = Category.all
 	end
 	
 	def create
-		@article = Article.new(title: params[:title], content: params[:content])
+		@article = Article.new(title: params[:title], content: params[:content], category_id: params[:category])
 		@article.save
+		if params[:category] != "0"
+			Category.find(params[:category]).update(num: Category.find(params[:category]).num+1)
+		end
 		redirect_to '/blog/show/' + @article.id.to_s
 	end
 	
@@ -26,17 +39,35 @@ class BlogController < ApplicationController
 	end
 	
 	def edit
+		@ctgrs = Category.all
 		@post = Article.find(params[:id])
 	end
 	
 	def update
 		@post = Article.find(params[:id])
-		@post.update(title: params[:title], content: params[:content])
+		@post_cat = @post.category_id
+		
+		# remove article from cat
+		if @post_cat != 0
+			Category.find(@post_cat).update(num: Category.find(@post_cat).num-1)
+		end
+		# add article to cat
+		if params[:category] != "0"
+			Category.find(params[:category]).update(num: Category.find(params[:category]).num+1)
+		end
+		
+		@post.update(title: params[:title], content: params[:content], category_id: params[:category])
 		redirect_to '/blog/show/' + @post.id.to_s
 	end
 	
 	def destroy
 		@post = Article.find(params[:id])
+		@post_cat = @post.category_id
+		
+		# remove article from cat
+		if @post_cat != 0
+			Category.find(@post_cat).update(num: Category.find(@post_cat).num-1)
+		end
 		@post.destroy
 		redirect_to '/blog/index/'
 	end
