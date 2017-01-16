@@ -49,3 +49,6 @@ group :development do
   gem 'spring'
 end
 
+# Summernote 
+gem 'summernote-rails', '0.8.2.0'
+gem 'bootstrap-sass'

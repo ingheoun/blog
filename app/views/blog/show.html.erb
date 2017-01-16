@@ -2,14 +2,16 @@
   <div class="col-md-8">
     <div class="blog-post">
       <h2 class="blog-post-title"><%= @post.title %></h2>
+      
       <ul class="list-inline blog-post-meta">
         <li><%= @post.created_at.in_time_zone('Seoul').strftime("%Y-%m-%d %H:%M") %></li>
         <li><a href="/blog/edit/<%= @post.id%>">수정</a></li>
         <li><a rel="nofollow" data-method="post" href="/blog/destroy/<%= @post.id%>">삭제</a></li>
         <!--<li><%= link_to '삭제','/blog/destroy/'+@post.id.to_s ,method:"post"%></li>-->
       </ul>
+      
       <p class = 'blog-content'>
-        <%= @post.content %>
+        <%= @post.content.html_safe %>
       </p>
       </div>
     </div><!-- /.blog-post -->

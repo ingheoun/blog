@@ -8,7 +8,7 @@ Using:  Cloud 9, Heroku, CloudFlare
 
 Import: Bootstrap, device
 
-Starting at 2015.09.24. w/ ['like a lion @KAIST'](www.facebook.com/likelion.kaist)
+Starting at 2015.09.24. w/ '[like a lion @KAIST](https://www.facebook.com/likelion.kaist)''
 
 ##Update
 
@@ -25,7 +25,11 @@ Starting at 2015.09.24. w/ ['like a lion @KAIST'](www.facebook.com/likelion.kais
 - Import device
 - Make category and menu for articles
 - Change article time view for korea
+- Print flash message for sign in/out
 
+#### 2017.01.16
+
+- Import summernote 
 
 ## To Do
 
@@ -36,5 +40,6 @@ Starting at 2015.09.24. w/ ['like a lion @KAIST'](www.facebook.com/likelion.kais
 - Portfolio archive for me
 - Visitors for guest
 - Launching
+- print flash messages for invalid access.
 
 

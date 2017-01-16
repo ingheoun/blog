@@ -28,9 +28,16 @@ class BlogController < ApplicationController
 	def create
 		@article = Article.new(title: params[:title], content: params[:content], category_id: params[:category])
 		@article.save
-		if params[:category] != "0"
-			Category.find(params[:category]).update(num: Category.find(params[:category]).num+1)
+		
+		# update each category's article num 
+		@cat_id = params[:category]
+		@cat = Category.find(@cat_id)
+		
+		# if category is not "all", then increase cat num 1.
+		if @cat_id != "0" 
+			@cat.update(num: @cat.num+1)
 		end
+		
 		redirect_to '/blog/show/' + @article.id.to_s
 	end
 	
