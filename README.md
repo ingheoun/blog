@@ -6,7 +6,7 @@ Language: Ruby on Rails
 
 Using:  Cloud 9, Heroku, CloudFlare
 
-Import: Bootstrap, device
+Import: Bootstrap, device, summernote
 
 Starting at 2015.09.24. w/ '[like a lion @KAIST](https://www.facebook.com/likelion.kaist)''
 
@@ -41,5 +41,6 @@ Starting at 2015.09.24. w/ '[like a lion @KAIST](https://www.facebook.com/likeli
 - Visitors for guest
 - Launching
 - print flash messages for invalid access.
+- Show articles ordered by recent updates. 
 
 
