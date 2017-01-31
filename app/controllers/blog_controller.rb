@@ -9,15 +9,15 @@ class BlogController < ApplicationController
 	
 	def index
 		@msg = "Hello World!"
-		@ctgrs = Category.all
-		@all_article = Article.all
+		@ctgrs = Category.order(:id)
+		@all_article = Article.order(updated_at: :desc)
 		
 		
 		if params[:cat].blank? or params[:cat] == "all"
-			@posts = Article.all
+			@posts = @all_article.all
 		else
 			@cat_id = Category.where("name = ?", params[:cat]).first.id
-			@posts = Article.where("category_id = ?", @cat_id)
+			@posts = @all_article.where("category_id = ?", @cat_id)
 		end
 	end
 	

@@ -11,8 +11,10 @@
               <%= post.title %> &nbsp
             </a>
           </h2>
-          <ul class="list-inline blog-post-meta">
-              <li><%= post.created_at.in_time_zone('Seoul').strftime("%Y-%m-%d %H:%M") %></li>
+          <ul class="list-inline blog-post-meta" style="font-size:
+ 14px">
+              <li>Created: <%= post.created_at.in_time_zone('Seoul').strftime("%y.%m.%d %H:%M") %></li>
+              <li>Updated: <%= post.updated_at.in_time_zone('Seoul').strftime("%y.%m.%d %H:%M") %></li>
             </ul>
         </div><!-- /.blog-post -->
     <% end %>

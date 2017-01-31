@@ -31,17 +31,21 @@ Starting at 2015.09.24. w/ '[like a lion @KAIST](https://www.facebook.com/likeli
 
 - Import summernote 
 
+#### 2017.01.31
+
+- Show articles ordered by recent updates. 
+- Launching
+- Show articles create times but also update times
+
+
 ## To Do
 
-- Show articles create times but also update times
 - Nickname for account
 - Reply for articles
 - Hits and 'like' for articles
 - Portfolio archive for me
 - Visitors for guest
-- Launching
 - print flash messages for invalid access.
-- Show articles ordered by recent updates. 
 - Pagination
 - Daily diary
 
