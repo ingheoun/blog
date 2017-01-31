@@ -42,5 +42,6 @@ Starting at 2015.09.24. w/ '[like a lion @KAIST](https://www.facebook.com/likeli
 - Launching
 - print flash messages for invalid access.
 - Show articles ordered by recent updates. 
-
+- Pagination
+- Daily diary
 
