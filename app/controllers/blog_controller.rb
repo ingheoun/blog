@@ -26,15 +26,15 @@ class BlogController < ApplicationController
 	end
 	
 	def create
-		@article = Article.new(title: params[:title], content: params[:content], category_id: params[:category])
+		@article = Article.new(title: params[:title], content: params[:content])
 		@article.save
 		
 		# update each category's article num 
 		@cat_id = params[:category]
-		@cat = Category.find(@cat_id)
 		
 		# if category is not "all", then increase cat num 1.
 		if @cat_id != "0" 
+			@cat = Category.find(@cat_id)
 			@cat.update(num: @cat.num+1)
 		end
 		
