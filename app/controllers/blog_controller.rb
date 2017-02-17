@@ -1,7 +1,7 @@
 class BlogController < ApplicationController
 	
-	before_action :authenticate_user!, only: [:new, :edit, :update, :creation, :destroy]
-	before_action :check_admin, except: [:show, :index]
+	before_action :authenticate_user!, only: [:new, :edit, :update, :creation, :destroy, :write_diary]
+	before_action :check_admin, except: [:show, :index, :diary]
 	
 	def check_admin
 		redirect_to '/blog/index/' if !user_signed_in? || current_user.role != 'admin'
@@ -78,16 +78,12 @@ class BlogController < ApplicationController
 	end
 	
 	def diary
-		
 		@diaries = Diary.order(date: :desc)
-		
-		
 	end
 	
 	def write_diary
 		@diary = Diary.new(date: params[:diary][:date], content: params[:diary][:content])
 		@diary.save
-		
 		redirect_to '/blog/diary/'
 	end
 	

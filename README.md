@@ -37,6 +37,9 @@ Starting at 2015.09.24. w/ '[like a lion @KAIST](https://www.facebook.com/likeli
 - Launching
 - Show articles create times but also update times
 
+#### 2017.02.18
+
+- Make Daily diary
 
 ## To Do
 
@@ -47,5 +50,4 @@ Starting at 2015.09.24. w/ '[like a lion @KAIST](https://www.facebook.com/likeli
 - Visitors for guest
 - print flash messages for invalid access.
 - Pagination
-- Daily diary
 
