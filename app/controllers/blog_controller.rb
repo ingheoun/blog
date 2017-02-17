@@ -78,11 +78,15 @@ class BlogController < ApplicationController
 	end
 	
 	def diary
-		@diaries = Diary.order(date: :desc)
+		if user_signed_in? && current_user.role == 'admin'
+			@diaries = Diary.order(date: :desc)
+		else
+			@diaries =  Diary.where(private: false).order(date: :desc)
+		end
 	end
 	
 	def write_diary
-		@diary = Diary.new(date: params[:diary][:date], content: params[:diary][:content])
+		@diary = Diary.new(date: params[:diary][:date], content: params[:diary][:content], private: params[:private])
 		@diary.save
 		redirect_to '/blog/diary/'
 	end
