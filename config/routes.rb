@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get "blog/edit/:id", to: 'blog#edit'
   post "blog/update/:id", to: 'blog#update'
   post "blog/destroy/:id", to: 'blog#destroy'
+  get "blog/diary"
+  post "blog/write_diary"
   
   
   

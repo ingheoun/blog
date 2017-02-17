@@ -77,4 +77,19 @@ class BlogController < ApplicationController
 		redirect_to '/blog/index/'
 	end
 	
+	def diary
+		
+		@diaries = Diary.order(date: :desc)
+		
+		
+	end
+	
+	def write_diary
+		@diary = Diary.new(date: params[:diary][:date], content: params[:diary][:content])
+		@diary.save
+		
+		redirect_to '/blog/diary/'
+	end
+	
+		
 end
