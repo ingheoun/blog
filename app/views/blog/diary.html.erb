@@ -25,7 +25,7 @@
 <div class = "form-group">
 	<% @diaries.each do |diary| %>
       <label> <%= diary.date %> </label>
-      <p> <%= diary.content %> </p>
+      <p class = 'blog-content'> <%= diary.content %> </p>
   <% end %>
 	
 </div>
