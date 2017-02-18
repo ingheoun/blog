@@ -40,6 +40,8 @@ Starting at 2015.09.24. w/ '[like a lion @KAIST](https://www.facebook.com/likeli
 #### 2017.02.18
 
 - Make Daily diary
+- make search possible from search engine to allow crawling (site map, RSS)
+- 
 
 ## To Do
 
