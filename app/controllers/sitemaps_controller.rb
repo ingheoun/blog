@@ -6,10 +6,4 @@ class SitemapsController < ApplicationController
     end
   end
   
-  def google
-    respond_to do |format|
-     format.html
-   end
-  end
-  
 end
