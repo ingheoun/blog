@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :sitemaps, :only => :show
   get "sitemap" => "sitemaps#show"
   # get "sitemap.xml" => "sitemaps#show", format: "xml", as: :sitemap
+  get "google94359cbfebea9a3b" => "sitemaps#google"
   
   
   # The priority is based upon order of creation: first created -> highest priority.

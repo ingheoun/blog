@@ -5,4 +5,11 @@ class SitemapsController < ApplicationController
      format.xml
     end
   end
+  
+  def google
+    respond_to do |format|
+     format.html
+   end
+  end
+  
 end
