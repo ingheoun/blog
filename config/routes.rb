@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   get "blog/diary"
   post "blog/write_diary"
   
-  
+
+  resources :sitemaps, :only => :show
+  get "sitemap" => "sitemaps#show"
+  # get "sitemap.xml" => "sitemaps#show", format: "xml", as: :sitemap
   
   
   # The priority is based upon order of creation: first created -> highest priority.
