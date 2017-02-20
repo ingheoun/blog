@@ -91,5 +91,12 @@ class BlogController < ApplicationController
 		redirect_to '/blog/diary/'
 	end
 	
+	def destroy_diary
+		@diary = Diary.find(params[:diary_id])
+		@diary.destroy
+		redirect_to '/blog/diary/'
+	
+	
+	end
 		
 end

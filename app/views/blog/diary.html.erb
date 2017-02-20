@@ -25,6 +25,9 @@
 <div class = "form-group">
 	<% @diaries.each do |diary| %>
       <label> <%= diary.date %> </label>
+      <% if user_signed_in? && current_user.role == 'admin' %>
+	      <a rel="nofollow" data-method="post" href="/blog/destroy_diary/<%= diary.id%>">삭제</a>
+      <% end %>
       <p class = 'blog-content'> <%= diary.content %> </p>
   <% end %>
 	

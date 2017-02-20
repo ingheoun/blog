@@ -41,12 +41,16 @@ Starting at 2015.09.24. w/ '[like a lion @KAIST](https://www.facebook.com/likeli
 
 - Make Daily diary
 - make search possible from search engine to allow crawling (site map, RSS)
-- 
+
+#### 2017.02.20
+
+- Make diary destroy
+
 
 ## To Do
 
 - Nickname for account
-- Reply for articles
+- Reply for articles (https://withrails.com/2016/11/06/nested_comment/)
 - Hits and 'like' for articles
 - Portfolio archive for me
 - Visitors for guest
