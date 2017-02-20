@@ -15,7 +15,7 @@ xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
   @posts.each do |p|
     xml.url {
       xml.loc("http://ingheoun.link/blog/show/#{p.id.to_s}")
-      xml.changefreq("weekly")
+      xml.changefreq("daily")
       xml.priority(0.5)
     }
   end

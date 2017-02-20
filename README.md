@@ -44,7 +44,7 @@ Starting at 2015.09.24. w/ '[like a lion @KAIST](https://www.facebook.com/likeli
 
 #### 2017.02.20
 
-- Make diary destroy
+- Make diary destruction
 
 
 ## To Do
@@ -56,4 +56,5 @@ Starting at 2015.09.24. w/ '[like a lion @KAIST](https://www.facebook.com/likeli
 - Visitors for guest
 - print flash messages for invalid access.
 - Pagination
+- Category Createtion, destruction and reordering category in webpage
 
