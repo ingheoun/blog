@@ -45,9 +45,9 @@
               <a class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %> <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li class="dropdown-list" >
-                  <%= current_user.nickname %></li>
+                  Nickname: <%= current_user.nickname %></li>
                 <li class="dropdown-list" >
-                  <%= current_user.role %></li>
+                  Role: <%= current_user.role %></li>
                 <li><%= link_to "My Profile", edit_user_registration_path %></li>
                 <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></li>
               </ul>
