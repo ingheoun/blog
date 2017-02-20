@@ -1,6 +1,6 @@
 class BlogController < ApplicationController
 	
-	before_action :authenticate_user!, only: [:new, :edit, :update, :creation, :destroy, :write_diary]
+	before_action :authenticate_user!, only: [:new, :edit, :update, :creation, :destroy, :write_diary, :destroy_diary]
 	before_action :check_admin, except: [:show, :index, :diary]
 	
 	def check_admin
